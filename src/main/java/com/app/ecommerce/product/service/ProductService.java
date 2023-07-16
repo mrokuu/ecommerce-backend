@@ -1,5 +1,6 @@
 package com.app.ecommerce.product.service;
 
+import com.app.ecommerce.admin.product.model.AdminProduct;
 import com.app.ecommerce.product.model.Product;
 import com.app.ecommerce.product.repository.ProductRepository;
 import lombok.AllArgsConstructor;
@@ -17,5 +18,9 @@ public class ProductService {
     private final ProductRepository productRepository;
     public Page<Product> getProducts(Pageable pageable){
         return productRepository.findAll(pageable);
+    }
+
+    public Product getProduct(Long id) {
+        return productRepository.findById(id).orElseThrow();
     }
 }
