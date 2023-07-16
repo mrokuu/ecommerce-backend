@@ -3,6 +3,7 @@ package com.app.ecommerce.admin.product.controller;
 import com.app.ecommerce.admin.product.controller.dto.AdminProductDto;
 import com.app.ecommerce.admin.product.model.AdminProduct;
 import com.app.ecommerce.admin.product.service.AdminProductService;
+import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
@@ -32,14 +33,14 @@ public class AdminProductController {
 
 
     @PostMapping("/admin/products")
-    public AdminProduct createProduct(@RequestBody AdminProductDto adminProductDto){
+    public AdminProduct createProduct(@RequestBody @Valid AdminProductDto adminProductDto){
         return adminProductService.createProduct(mapAdminProduct(EMPTY_ID, adminProductDto)
         );
     }
 
 
     @PutMapping("/admin/products/{id}")
-    public AdminProduct updateProduct(@PathVariable Long id, @RequestBody AdminProductDto adminProductDto ){
+    public AdminProduct updateProduct(@PathVariable Long id, @RequestBody @Valid AdminProductDto adminProductDto ){
         return adminProductService.updateProduct(mapAdminProduct(id, adminProductDto)
         );
     }

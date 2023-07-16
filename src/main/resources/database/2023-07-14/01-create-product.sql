@@ -8,5 +8,5 @@ create table product (
                          description text not null,
                          price decimal(9,2) not null,
                          currency varchar(3) not null,
-                         image varchar(255) not null
+                         image varchar(255)
 );
