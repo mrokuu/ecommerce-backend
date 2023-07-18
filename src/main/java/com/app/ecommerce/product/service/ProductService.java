@@ -1,15 +1,12 @@
 package com.app.ecommerce.product.service;
 
-import com.app.ecommerce.admin.product.model.AdminProduct;
-import com.app.ecommerce.product.model.Product;
+import com.app.ecommerce.common.model.Product;
 import com.app.ecommerce.product.repository.ProductRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
 import org.springframework.stereotype.Service;
-
-import java.util.List;
 
 @Service
 @AllArgsConstructor

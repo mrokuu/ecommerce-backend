@@ -10,7 +10,7 @@ public class AdminProductMapper {
                 .id(id)
                 .name(adminProductDto.getName())
                 .description(adminProductDto.getDescription())
-                .category(adminProductDto.getCategory())
+                .categoryId(adminProductDto.getCategoryId())
                 .price(adminProductDto.getPrice())
                 .currency(adminProductDto.getCurrency())
                 .image(adminProductDto.getImage())

@@ -1,4 +1,4 @@
-package com.app.ecommerce.product.model;
+package com.app.ecommerce.common.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -20,7 +20,7 @@ public class Product {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
-    private String category;
+    private Long categoryId;
     private String description;
     private BigDecimal price;
     private String currency;

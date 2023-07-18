@@ -11,7 +11,5 @@ public class AdminCategoryDto {
     @Length(min = 4)
     private String name;
     private String description;
-    @NotBlank
-    @Length(min = 4)
-    private String url;
+
 }

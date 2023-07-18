@@ -18,9 +18,7 @@ public class AdminProductDto {
     @NotBlank
     @Length(min = 4)
     private String name;
-    @NotBlank
-    @Length(min = 4)
-    private String category;
+    private Long categoryId;
     @NotBlank
     @Length(min = 4)
     private String description;
