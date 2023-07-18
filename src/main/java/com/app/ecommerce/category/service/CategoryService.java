@@ -24,7 +24,7 @@ public class CategoryService {
         return categoryRepository.findAll();
     }
 
-    @Transactional
+    @Transactional(readOnly = true)
     public CategoryProductsDto getCategoriesWithProducts(String name, Pageable pageable) {
         Category category =  categoryRepository.findByName(name);
         Page<Product> page  = productRepository.findByCategoryId(category.getId(), pageable);
