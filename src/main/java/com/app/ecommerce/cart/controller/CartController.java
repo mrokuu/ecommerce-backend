@@ -21,7 +21,7 @@ public class CartController {
     }
 
 
-    @PostMapping("/carts/{id}")
+    @PutMapping("/carts/{id}")
     public Cart addProductToCart(@PathVariable  Long id, @RequestBody CartProductDto cartProductDto){
         return cartService.addProductToCart(id, cartProductDto);
     }
