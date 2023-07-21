@@ -16,8 +16,8 @@ public class EmailSimpleService implements EmailSender {
     @Override
     public void send(String to, String subject, String msg){
         SimpleMailMessage message = new SimpleMailMessage();
-        message.setFrom("Shop <sklep@nullpointerexception.pl>");
-        message.setReplyTo("Shop <sklep@nullpointerexception.pl>");
+        message.setFrom("Shop <sklep@example.pl>");
+        message.setReplyTo("Shop <sklep@example.pl>");
         message.setTo(to);
         message.setSubject(subject);
         message.setText(msg);

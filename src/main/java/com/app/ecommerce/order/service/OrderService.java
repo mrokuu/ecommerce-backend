@@ -47,7 +47,7 @@ public class OrderService {
     private void sendConfirmEmail(Order newOrder) {
         emailClientService.getInstance()
                 .send(newOrder.getEmail(),
-                        "Twoje zamówienie zostało przyjęte",
+                        "Your order has been accepted",
                         createEmailMessage(newOrder));
     }
 
