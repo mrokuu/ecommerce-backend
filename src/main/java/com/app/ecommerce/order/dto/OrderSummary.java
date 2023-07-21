@@ -2,6 +2,7 @@ package com.app.ecommerce.order.dto;
 
 import com.app.ecommerce.order.model.OrderStatus;
 import com.app.ecommerce.order.model.Payment;
+import jakarta.persistence.Column;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
