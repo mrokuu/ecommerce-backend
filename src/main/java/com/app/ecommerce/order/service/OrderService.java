@@ -1,11 +1,24 @@
 package com.app.ecommerce.order.service;
 
+import com.app.ecommerce.cart.model.Cart;
 import com.app.ecommerce.cart.repository.CartItemRepository;
 import com.app.ecommerce.cart.repository.CartRepository;
+import com.app.ecommerce.common.EmailClientService;
+import com.app.ecommerce.order.dto.OrderDto;
+import com.app.ecommerce.order.dto.OrderSummary;
+import com.app.ecommerce.order.model.Order;
+import com.app.ecommerce.order.model.Payment;
+import com.app.ecommerce.order.model.Shipment;
 import com.app.ecommerce.order.repository.OrderRepository;
+import com.app.ecommerce.order.repository.OrderRowRepository;
+import com.app.ecommerce.order.repository.PaymentRepository;
+import com.app.ecommerce.order.repository.ShipmentRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import static com.app.ecommerce.order.mapper.OrderEmailMessageMapper.createEmailMessage;
+import static com.app.ecommerce.order.mapper.OrderMapper.*;
 
 @Service
 @RequiredArgsConstructor
