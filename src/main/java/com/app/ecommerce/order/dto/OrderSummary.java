@@ -1,6 +1,7 @@
 package com.app.ecommerce.order.dto;
 
 import com.app.ecommerce.order.model.OrderStatus;
+import com.app.ecommerce.order.model.Payment;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -18,6 +19,6 @@ public class OrderSummary {
     private LocalDateTime placeDate;
     private OrderStatus status;
     private BigDecimal grossValue;
-    
+    private Payment payment;
 }
 
