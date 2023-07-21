@@ -3,7 +3,7 @@ package com.app.ecommerce.order.service;
 import com.app.ecommerce.cart.model.Cart;
 import com.app.ecommerce.cart.repository.CartItemRepository;
 import com.app.ecommerce.cart.repository.CartRepository;
-import com.app.ecommerce.common.EmailClientService;
+import com.app.ecommerce.common.email.EmailClientService;
 import com.app.ecommerce.order.dto.OrderDto;
 import com.app.ecommerce.order.dto.OrderSummary;
 import com.app.ecommerce.order.model.Order;
