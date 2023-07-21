@@ -22,8 +22,8 @@ public class CartController {
 
 
     @PutMapping("/carts/{id}")
-    public Cart addProductToCart(@PathVariable  Long id, @RequestBody CartProductDto cartProductDto){
-        return cartService.addProductToCart(id, cartProductDto);
+    public CartSummaryDto addProductToCart(@PathVariable Long id, @RequestBody CartProductDto cartProductDto){
+        return CartMapper.mapToCartSummary(cartService.addProductToCart(id, cartProductDto));
     }
 
 
