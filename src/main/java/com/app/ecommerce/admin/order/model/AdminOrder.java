@@ -17,8 +17,6 @@ public class AdminOrder {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private LocalDateTime placeDate;
-    @Enumerated(EnumType.STRING)
-    private AdminOrderStatus orderStatus;
     @OneToMany
     @JoinColumn(name = "orderId")
     private List<AdminOrderRow> orderRows;
@@ -32,8 +30,8 @@ public class AdminOrder {
     private String phone;
     @OneToOne
     private AdminPayment payment;
-//    @OneToMany
-//    @JoinColumn(name = "orderId")
-//    private List<AdminOrderLog> orderLogs;
+    @OneToMany
+    @JoinColumn(name = "orderId")
+    private List<AdminOrderLog> orderLogs;
 }
 
