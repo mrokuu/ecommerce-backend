@@ -47,12 +47,7 @@ public class OrderService {
         return createOrderSummary(payment, newOrder);
     }
 
-//    private void sendConfirmEmail(Order newOrder) {
-//        emailClientService.getInstance()
-//                .send(newOrder.getEmail(),
-//                        "Your order has been accepted",
-//                        createEmailMessage(newOrder));
-//    }
+
 
     private void clearOrderCart(OrderDto orderDto) {
         cartItemRepository.deleteByCartId(orderDto.getCartId());
