@@ -17,6 +17,8 @@ public class AdminOrder {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private LocalDateTime placeDate;
+    @Enumerated(EnumType.STRING)
+    private AdminOrderStatus orderStatus;
     @OneToMany
     @JoinColumn(name = "orderId")
     private List<AdminOrderRow> orderRows;
