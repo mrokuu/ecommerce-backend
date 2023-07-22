@@ -3,7 +3,8 @@ package com.app.ecommerce.order.service;
 import com.app.ecommerce.cart.model.Cart;
 import com.app.ecommerce.cart.repository.CartItemRepository;
 import com.app.ecommerce.cart.repository.CartRepository;
-import com.app.ecommerce.common.email.EmailClientService;
+//import com.app.ecommerce.common.email.EmailClientService;
+import com.app.ecommerce.common.email.EmailSimpleService;
 import com.app.ecommerce.order.dto.OrderDto;
 import com.app.ecommerce.order.dto.OrderSummary;
 import com.app.ecommerce.order.model.Order;
@@ -30,7 +31,8 @@ public class OrderService {
     private final OrderRowRepository orderRowRepository;
     private final ShipmentRepository shipmentRepository;
     private final PaymentRepository paymentRepository;
-    private final EmailClientService emailClientService;
+//    private final EmailClientService emailClientService;
+    private final EmailSimpleService emailSimpleService;
 
     @Transactional
     public OrderSummary placeOrder(OrderDto orderDto) {
@@ -40,16 +42,17 @@ public class OrderService {
         Order newOrder = orderRepository.save(createNewOrder(orderDto, cart, shipment, payment));
         saveOrderRows(cart, newOrder.getId(), shipment);
         clearOrderCart(orderDto);
-        sendConfirmEmail(newOrder);
+//        sendConfirmEmail(newOrder);
+        emailSimpleService.send(newOrder.getEmail(), "Your order has been placed", createEmailMessage(newOrder));
         return createOrderSummary(payment, newOrder);
     }
 
-    private void sendConfirmEmail(Order newOrder) {
-        emailClientService.getInstance()
-                .send(newOrder.getEmail(),
-                        "Your order has been accepted",
-                        createEmailMessage(newOrder));
-    }
+//    private void sendConfirmEmail(Order newOrder) {
+//        emailClientService.getInstance()
+//                .send(newOrder.getEmail(),
+//                        "Your order has been accepted",
+//                        createEmailMessage(newOrder));
+//    }
 
     private void clearOrderCart(OrderDto orderDto) {
         cartItemRepository.deleteByCartId(orderDto.getCartId());

@@ -8,16 +8,15 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class EmailSimpleService implements EmailSender {
+public class EmailSimpleService  {
 
     private final JavaMailSender mailSender;
 
     @Async
-    @Override
     public void send(String to, String subject, String msg){
         SimpleMailMessage message = new SimpleMailMessage();
-        message.setFrom("Shop <sklep@example.pl>");
-        message.setReplyTo("Shop <sklep@example.pl>");
+        message.setFrom("Shop <spring.adamtst@outlook.com>");
+        message.setReplyTo("Shop <spring.adamtst@outlook.com>");
         message.setTo(to);
         message.setSubject(subject);
         message.setText(msg);
