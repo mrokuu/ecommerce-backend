@@ -42,7 +42,7 @@ public class OrderService {
         Order newOrder = orderRepository.save(createNewOrder(orderDto, cart, shipment, payment));
         saveOrderRows(cart, newOrder.getId(), shipment);
         clearOrderCart(orderDto);
-//        sendConfirmEmail(newOrder);
+
         emailSimpleService.send(newOrder.getEmail(), "Your order has been placed", createEmailMessage(newOrder));
         return createOrderSummary(payment, newOrder);
     }
