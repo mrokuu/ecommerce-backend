@@ -22,7 +22,6 @@ public class AdminOrderService {
 
     private final AdminOrderRepository orderRepository;
     private final AdminOrderLogRepository adminOrderLogRepository;
-//    private final EmailNotificationForStatusChange emailNotificationForStatusChange;
 
     public Page<AdminOrder> getOrders(Pageable pageable) {
         return orderRepository.findAll(
