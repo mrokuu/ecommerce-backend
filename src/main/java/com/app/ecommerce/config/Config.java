@@ -8,10 +8,13 @@ import io.swagger.v3.oas.models.security.SecurityScheme;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import java.math.BigDecimal;
 import java.util.Arrays;
 
 @Configuration
 public class Config {
+
+    
 
 
     @Bean
@@ -24,4 +27,6 @@ public class Config {
                 .addSecurityItem(
                         new SecurityRequirement().addList("JWT Token", Arrays.asList("read", "write")));
     }
+
+
 }
