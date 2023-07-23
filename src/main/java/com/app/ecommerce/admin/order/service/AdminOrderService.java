@@ -63,7 +63,7 @@ public class AdminOrderService {
         adminOrderLogRepository.save(AdminOrderLog.builder()
                 .created(LocalDateTime.now())
                 .orderId(orderId)
-                .note("Zmian statatusu zamówienie z " + oldStatus.getValue() + " na " + newStatus.getValue())
+                .note("The status was chaged" + oldStatus.getValue() + " na " + newStatus.getValue())
                 .build());
     }
 }
