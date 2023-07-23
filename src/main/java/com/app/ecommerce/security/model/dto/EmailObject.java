@@ -1,4 +1,8 @@
 package com.app.ecommerce.security.model.dto;
 
-public class EmailObject {
+import lombok.Getter;
+
+@Getter
+public class EmailObject{
+    private String email;
 }
