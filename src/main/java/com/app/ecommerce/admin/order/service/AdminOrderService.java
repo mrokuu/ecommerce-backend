@@ -63,7 +63,7 @@ public class AdminOrderService {
         adminOrderLogRepository.save(AdminOrderLog.builder()
                 .created(LocalDateTime.now())
                 .orderId(orderId)
-                .note("Zmian statatusu zamówienie z " + oldStatus.getValue() + " na " + newStatus.getValue())
+                .note("Change the order status from " + oldStatus.getValue() + " to " + newStatus.getValue())
                 .build());
     }
 }
