@@ -10,6 +10,7 @@ The project is an online store. I was trying to implement a function that would 
 * Sending an e-mail after placing an order
 * Sales statistics
 * Export to csv file
+* Cleaning cart after three days
 * CRUD functions
 
 
