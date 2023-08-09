@@ -25,9 +25,7 @@ The project is an online store. I was trying to implement a function that would 
 * JWT
 
 
-### TODO
 
-- [ ] Spring Security
 
 
 
